@@ -4,9 +4,14 @@ A continuació es detalla les sentències per a crear una base de dades d'exempl
 Realitzat sobre EC2 amb Maria DB 10.5.18
 
 
+## Assignar una contrasenya a l'usuari root perquè per defecte vé en blanc
+
+`ALTER USER 'root'@'localhost' IDENTIFIED BY 'ITB2023.';`
+
 ## Crear la BBDD
 
 `create database curs;`
+
 `use curs;`
 
 ## Crear una taula
@@ -19,3 +24,11 @@ Exemple de taula anomenada "employees"
 Crearció d'un usuari Jordi Casas
 
 ```INSERT INTO `employees` (first_name, last_name, birth_date, gender, hire_date) values("Jordi","Casas", CURDATE(), "M", CURDATE());```
+
+## Habilitar la connexió des d'una altra EC2 al Mysql
+
+Per exemple, crear un usuari query per no utilitzar root que habilita l'accés des de la EC2 amb ip interna 172.31.88.206 al Mysql
+
+`CREATE USER 'query'@'172.31.88.206' IDENTIFIED BY 'ITB2023.';`
+
+`GRANT ALL ON curs.* TO query@'172.31.88.206';`
