@@ -32,3 +32,10 @@ Per exemple, crear un usuari query per no utilitzar root que habilita l'accés d
 `CREATE USER 'query'@'172.31.88.206' IDENTIFIED BY 'ITB2023.';`
 
 `GRANT ALL ON curs.* TO query@'172.31.88.206';`
+
+Si es vol habilitar l'accés per tota màquina d'origen:
+
+`CREATE USER 'query'@'%' IDENTIFIED BY 'ITB2023.';`
+
+`GRANT ALL ON curs.* TO query@'%';`
+
