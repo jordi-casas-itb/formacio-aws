@@ -1,12 +1,12 @@
 # Base de dades Mysql
 
 A continuació es detalla les sentències per a crear una base de dades d'exemple que es fa servir en diferents exemples de codi per fer consultes a una taula.
-Realitzat sobre EC2 amb Maria DB 10.5.18
+Realitzat sobre EC2 amb Maria DB 10.5.29
 
 
 ## Assignar una contrasenya a l'usuari root perquè per defecte vé en blanc
 
-`ALTER USER 'root'@'localhost' IDENTIFIED BY 'ITB2023.';`
+`ALTER USER 'root'@'localhost' IDENTIFIED BY 'ITB2026.';`
 
 ## Crear la BBDD
 
@@ -29,13 +29,13 @@ Crearció d'un usuari Jordi Casas
 
 Per exemple, crear un usuari query per no utilitzar root que habilita l'accés des de la EC2 amb ip interna 172.31.88.206 al Mysql
 
-`CREATE USER 'query'@'172.31.88.206' IDENTIFIED BY 'ITB2023.';`
+`CREATE USER 'query'@'172.31.88.206' IDENTIFIED BY 'ITB2026.';`
 
 `GRANT ALL ON curs.* TO query@'172.31.88.206';`
 
 Si es vol habilitar l'accés per tota màquina d'origen:
 
-`CREATE USER 'query'@'%' IDENTIFIED BY 'ITB2023.';`
+`CREATE USER 'query'@'%' IDENTIFIED BY 'ITB2026.';`
 
 `GRANT ALL ON curs.* TO query@'%';`
 
